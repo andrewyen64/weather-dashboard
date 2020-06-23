@@ -36,6 +36,18 @@ input {
     font-size: 20px;
 }
 
+#cityHistory {
+    padding-top: 10px;
+    font-size: 22px;
+}
+
+.history {
+    padding: 10px 200px 10px 25px;
+    font-size: 24px;
+    text-align: right;
+}
+
+
 /* Right Column Weather Info */
 .cityData {
     margin-left: 5px;
@@ -61,6 +73,7 @@ input {
     width: 160px;
     color: white;
     padding-left: 10px;
+    padding-right: 5px;
 }
 
 .fiveForecast {
