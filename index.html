@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta ne="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+    <header>
+        <div class>
+            <p class="header">Weather Dashboard</p>
+        </div>
+    </header>
+    
+    <div class="wrapper">
+        <div class="sideBar">
+            <p class = "barTitle">Search for a City:</p>
+            <input type="text" class = "searchText" placeholder= "Ex. Arcadia">
+              <button class= "searchBtn">Search</button>
+            </div>
+
+
+        </div>
+        
+        <div class = "cityData">
+            <div id = "currentName"></div>
+            <div id = "currentTemp"></div>
+            <div id = "currentHumid"></div>
+            <div id = "currentWind"></div>
+            <div id = "uv"></div>
+        </div>
+
+
+        <div class="row fiveForecast">
+            <div class="column" id = "day1"></div>
+            <div class="column" id = "day2"></div>
+            <div class="column" id = "day3"></div>
+            <div class="column" id = "day4"></div>
+            <div class="column" id = "day5"></div>
+        </div>
+    
+    
+    
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
+    
