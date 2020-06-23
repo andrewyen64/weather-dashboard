@@ -1,5 +1,6 @@
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: white;
 }
 .header {
     display: flex;
@@ -37,19 +38,11 @@ input {
 
 /* Right Column Weather Info */
 .cityData {
-    /* border: 1px black solid; */
     margin-left: 5px;
     padding-left: 30%;
     line-height: 50px;
 }
 
-.fiveForecast {
-    /* border: 1px black solid; */
-    margin-left: 5px;
-    padding-top: 50px;
-    padding-left: 30%;
-    line-height: 30px;
-}
 
 #currentName {
     font-size: 30px;
@@ -70,6 +63,17 @@ input {
     padding-left: 10px;
 }
 
+.fiveForecast {
+    margin-left: 5px;
+    padding-top: 50px;
+    padding-left: 30%;
+    line-height: 30px;
+}
+
+#forecastTitle {
+    font-size: 26px;
+    font-weight: bold;
+}
 .column {
     float: left;
     width: 19%;

@@ -2,22 +2,29 @@ $(document).ready(function() {
     
     function displayInfo() {
         var city = $(".searchText").val();
+        // var city = "Arcadia";
 
         // Calls current day weather info ============
         $.ajax({
           url: "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=927111b528d2a9c2df44804564767062",
           method: "GET"
         }).then(function(response) {
-            // console.log(response);
+            console.log(response);
             var nameDiv = $("#currentName");
             var tempDiv = $("#currentTemp");
             var humidDiv = $("#currentHumid");
             var windDiv = $("#currentWind");
 
-            // Displays current city name and date
+            // Displays current city Name, Date and Weather Icon
             var name = response.name;
             var currentDate = moment().format("l");
             $("#currentName").text(name + " (" + currentDate + ")");
+            var todayIconDiv = $("<img>");
+            var todayCode = response.weather[0].icon;
+            var todayurl = "http://openweathermap.org/img/w/" + todayCode + ".png";
+            todayIconDiv.attr('src', todayurl);
+            todayIconDiv.attr('alt', 'Weather Icon');
+            nameDiv.append(todayIconDiv);
 
             // Displays current temperature converted from K
             var tempF = (response.main.temp - 273.15) * 1.80 + 32;
@@ -59,6 +66,7 @@ $(document).ready(function() {
             url: "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=927111b528d2a9c2df44804564767062",         
             method: "GET"
         }).then(function(response) {
+            var title = $("#forecastTitle");
             var day1Div = $("#day1");
             var day2Div = $("#day2");
             var day3Div = $("#day3");
@@ -66,6 +74,8 @@ $(document).ready(function() {
             var day5Div = $("#day5");
 
             console.log(response);
+            title.text("5-Day Forecast:");
+
 
         // = = = = = Forecast day 1 Info = = = = = = = = = = = = = = = = = = = 
             var day1Date = response.list[2].dt_txt;
@@ -79,7 +89,7 @@ $(document).ready(function() {
             day1Div.append(icon1Div);
 
             var day1tempF = (response.list[2].main.temp - 273.15) * 1.80 + 32;
-            var tempDiv1 = $("<div>").text("Temp: " + day1tempF.toFixed(2));
+            var tempDiv1 = $("<div>").text("Temp: " + day1tempF.toFixed(2) + " ℉");
             day1Div.append(tempDiv1);
 
 
@@ -168,6 +178,7 @@ $(document).ready(function() {
         });
     }    
     
+    // displayInfo();
 
     $(document).on("click", ".searchBtn", displayInfo);
 
